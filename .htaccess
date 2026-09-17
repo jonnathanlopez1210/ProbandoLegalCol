@@ -1,0 +1,2 @@
+# Evita el listado de directorios cuando el proyecto se sirve desde htdocs.
+Options -Indexes

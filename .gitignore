@@ -1,0 +1,26 @@
+# Configuración local con credenciales: NO debe publicarse en el repositorio.
+/config/database.php
+
+# Dependencias externas (no se emplean en la Fase 1; se reserva la convención).
+/vendor/
+
+# Archivos de entorno y registros locales.
+.env
+*.log
+/logs/
+
+# Sistema operativo y editores.
+Thumbs.db
+Desktop.ini
+.DS_Store
+.vscode/
+.idea/
+
+# Cachés de PHP.
+*.cache
+
+# Documentos subidos por la aplicación: el contenido NO se versiona.
+# Se conservan la protección (.htaccess) y el marcador de carpeta (.gitkeep).
+/storage/documentos/*
+!/storage/documentos/.htaccess
+!/storage/documentos/.gitkeep

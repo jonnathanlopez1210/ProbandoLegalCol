@@ -1,0 +1,2 @@
+# Enrutador y tablas de rutas: no deben servirse directamente desde el navegador.
+Require all denied

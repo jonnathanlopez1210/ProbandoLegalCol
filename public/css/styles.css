@@ -1,0 +1,315 @@
+/* ==========================================================================
+   Gestor Documental Jurídico (SGDJ) - Hoja de estilos principal
+   CSS3 organizado por secciones. Sin dependencias externas.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Variables y reseteo básico
+   -------------------------------------------------------------------------- */
+:root {
+    --color-fondo: #f2f4f7;
+    --color-superficie: #ffffff;
+    --color-texto: #1f2937;
+    --color-texto-suave: #6b7280;
+    --color-borde: #e5e7eb;
+    --color-primario: #1e3a5f;
+    --color-primario-claro: #2c4f7c;
+    --color-acento: #c2992a;
+    --color-exito: #15803d;
+    --color-pendiente: #b45309;
+    --color-error: #b91c1c;
+    --radio: 0.5rem;
+    --sombra: 0 1px 3px rgba(16, 24, 40, 0.1), 0 1px 2px rgba(16, 24, 40, 0.06);
+    --fuente: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--fuente);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --------------------------------------------------------------------------
+   2. Contenedores
+   -------------------------------------------------------------------------- */
+.contenedor {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+}
+
+.contenido {
+    flex: 1 0 auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* --------------------------------------------------------------------------
+   3. Encabezado
+   -------------------------------------------------------------------------- */
+.encabezado {
+    background: linear-gradient(135deg, var(--color-primario), var(--color-primario-claro));
+    color: #ffffff;
+    box-shadow: var(--sombra);
+}
+
+.encabezado__interior {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
+.encabezado h1 {
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    font-weight: 700;
+}
+
+.encabezado p {
+    color: #d1d9e4;
+    margin-top: 0.25rem;
+}
+
+.encabezado__sigla {
+    color: var(--color-acento);
+    font-size: 0.65em;
+    letter-spacing: 0.08em;
+    vertical-align: middle;
+}
+
+.insignia {
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 999px;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   4. Tarjetas
+   -------------------------------------------------------------------------- */
+.tarjeta {
+    background: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tarjeta h2 {
+    color: var(--color-primario);
+    font-size: 1.2rem;
+    margin-bottom: 0.9rem;
+    border-bottom: 2px solid var(--color-borde);
+    padding-bottom: 0.6rem;
+}
+
+.tarjeta h3 {
+    font-size: 0.95rem;
+    color: var(--color-texto-suave);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.6rem;
+    margin-top: 1.2rem;
+}
+
+.tarjeta--resumen p {
+    color: var(--color-texto);
+    margin-bottom: 0.6rem;
+}
+
+/* --------------------------------------------------------------------------
+   5. Tabla de información
+   -------------------------------------------------------------------------- */
+.tabla-info {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-info th,
+.tabla-info td {
+    text-align: left;
+    padding: 0.6rem 0.75rem;
+    border-bottom: 1px solid var(--color-borde);
+    vertical-align: top;
+}
+
+.tabla-info th {
+    width: 40%;
+    color: var(--color-texto-suave);
+    font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   6. Lista de estado de configuración
+   -------------------------------------------------------------------------- */
+.lista-estado {
+    list-style: none;
+}
+
+.lista-estado li {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    padding: 0.45rem 0;
+    border-bottom: 1px dashed var(--color-borde);
+}
+
+.lista-estado li:last-child {
+    border-bottom: none;
+}
+
+.estado {
+    flex-shrink: 0;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: #ffffff;
+    border-radius: 999px;
+    padding: 0.15rem 0.6rem;
+}
+
+.estado--ok {
+    background: var(--color-exito);
+}
+
+.estado--pendiente {
+    background: var(--color-pendiente);
+}
+
+.estado--error {
+    background: var(--color-error);
+}
+
+.detalle {
+    margin-left: auto;
+    color: var(--color-texto-suave);
+    font-size: 0.82rem;
+    background: var(--color-fondo);
+    border-radius: 0.3rem;
+    padding: 0.15rem 0.5rem;
+    overflow-wrap: anywhere;
+}
+
+/* --------------------------------------------------------------------------
+   7. Pie de página
+   -------------------------------------------------------------------------- */
+.pie {
+    background: var(--color-primario);
+    color: #c6d2e1;
+    padding: 1.25rem 0;
+    margin-top: auto;
+}
+
+.pie__anio {
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   8. Responsivo
+   -------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+    .encabezado__interior {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .tabla-info th {
+        width: 45%;
+    }
+
+    .detalle {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   9. Formularios y autenticación
+   -------------------------------------------------------------------------- */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.formulario input {
+    width: 100%;
+    padding: 0.75rem 0.9rem;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    background-color: var(--color-superficie);
+    color: var(--color-texto);
+    font: inherit;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.formulario input:focus {
+    outline: none;
+    border-color: var(--color-primario-claro);
+    box-shadow: 0 0 0 3px rgba(44, 79, 124, 0.15);
+}
+
+.formulario button {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: var(--radio);
+    background-color: var(--color-primario);
+    color: #ffffff;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        transform 0.1s ease;
+}
+
+.formulario button:hover {
+    background-color: var(--color-primario-claro);
+}
+
+.formulario button:active {
+    transform: translateY(1px);
+}
+
+/* --------------------------------------------------------------------------
+   10. Mensajes
+   -------------------------------------------------------------------------- */
+.error {
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #fecaca;
+    border-radius: var(--radio);
+    background-color: #fef2f2;
+    color: var(--color-error);
+}
+
+.mensaje {
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+}

@@ -1,0 +1,4 @@
+# Documentos subidos por la aplicación: denegar acceso directo por HTTP.
+# Únicamente el controlador DocumentoController (a través de ?accion=descargar)
+# entregará estos archivos, previa validación de sesión y permisos.
+Require all denied
